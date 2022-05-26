@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Blogs from "./Components/Blogs/Blogs";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
@@ -23,6 +24,7 @@ function App() {
           </RequireAuth>
         } />
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/portfolio" element={<PortPolio></PortPolio>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
