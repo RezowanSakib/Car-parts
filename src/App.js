@@ -4,7 +4,9 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
+import NoteFound from "./Components/NotFound/NotFound";
 import ParcessModal from "./Components/ParcessModal/Parcess";
+import Part from "./Components/Part/Part";
 import Register from "./Components/Register/Register";
 import RequireAuth from "./Components/RequiredAuth/RequireAuth";
 
@@ -14,13 +16,14 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="parcess" element={
+        <Route path="/part" element={
           <RequireAuth>
-            <ParcessModal />
+            <Part></Part>
           </RequireAuth>
         } />
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

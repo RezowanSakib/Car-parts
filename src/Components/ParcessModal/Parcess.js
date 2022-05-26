@@ -10,7 +10,7 @@ const ParcessModal = ({ selectedPart, setSelectedPart }) => {
   const handlePurcing = (event) => {
     event.preventDefault();
 
-    // to close the modal
+    
     setSelectedPart(null);
   };
 
