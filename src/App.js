@@ -5,8 +5,9 @@ import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import NoteFound from "./Components/NotFound/NotFound";
-import ParcessModal from "./Components/ParcessModal/Parcess";
+
 import Part from "./Components/Part/Part";
+import PortPolio from "./Components/Portfolio/PortPolio";
 import Register from "./Components/Register/Register";
 import RequireAuth from "./Components/RequiredAuth/RequireAuth";
 
@@ -22,6 +23,7 @@ function App() {
           </RequireAuth>
         } />
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/portfolio" element={<PortPolio></PortPolio>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
