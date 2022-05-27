@@ -9,6 +9,7 @@ import NoteFound from "./Components/NotFound/NotFound";
 
 import Part from "./Components/Part/Part";
 import PortPolio from "./Components/Portfolio/PortPolio";
+import Purchase from "./Components/Purchase/Purchase";
 import Register from "./Components/Register/Register";
 import RequireAuth from "./Components/RequiredAuth/RequireAuth";
 
@@ -18,11 +19,15 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/part" element={
-          
-            <Part></Part>
-          
-        } />
+        <Route path="/part" element={<Part></Part>} />
+        <Route
+          path="/product/:partID"
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/portfolio" element={<PortPolio></PortPolio>}></Route>
