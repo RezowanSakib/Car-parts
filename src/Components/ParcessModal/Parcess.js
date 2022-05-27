@@ -26,7 +26,7 @@ const ParcessModal = ({ selectedPart, setSelectedPart }) => {
             ✕
           </label>
           <h3 className="font-bold text-lg text-secondary">
-            Parcing for: {user.displayName}
+            Parcing for: {user?.displayName||''}
           </h3>
           <form
             onSubmit={handlePurcing}
