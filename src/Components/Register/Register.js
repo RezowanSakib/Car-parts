@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -24,11 +24,6 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  useEffect(() => {
-    if (user || gUser) {
-      navigate(from, { replace: true });
-    }
-  }, [user, gUser, from, navigate]);
   let signInError;
 
   if (loading || gLoading || updating) {
@@ -46,12 +41,13 @@ const Register = () => {
   }
 
   if (user || gUser) {
+ 
   }
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-
+    
     navigate("/");
   };
   return (
